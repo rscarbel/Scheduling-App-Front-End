@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const BottomNavbar = () => {
   return <>
     <Router>
+      <div className='page-content'>
     <Switch>
         <Route path='/' exact component={ScheduleDay}/>
         <Route path='/schedule-day' exact component={ScheduleDay}/>
@@ -17,6 +18,7 @@ const BottomNavbar = () => {
         <Route path='/logout' exact component={Logout}/>
         <Route path='/login' exact component={Login}/>
       </Switch>
+      </div>
       <nav className='bottom-nav'>
       <BottomNavLink displayText='Schedule' iconImage='assets/home_icon.png' linkLocation='/schedule-day' />
       <BottomNavLink displayText='Employees' iconImage='assets/employees_icon.png' linkLocation='/employees' />
