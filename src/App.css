@@ -1,35 +1,42 @@
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.bottom-nav {
-  order: 99999;
+nav {
   background-color: #33CC33;
   background-image: linear-gradient(#33CC33,#008000);
   display: flex;
+  color: #FFFFFF;
   align-items: stretch;
   justify-content: space-around;
 }
 
-.nav-link {
+.bottom-nav {
+  order: 99999;
+}
+
+.bottom-nav-link {
   user-select: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   font-size: 10px;
-  color: #FFFFFF;
   padding: 10px 0;
-  width: 25vw;
+  width: 50vw;
   flex-grow: 1;
 }
 
-.nav-link > img {
+.bottom-nav-link > img {
   height: 20px;
 }
 
-.nav-link:active {
+.bottom-nav-link:active {
   background-color: #5beb5b;
 }
 
@@ -42,37 +49,51 @@ a {
   align-items: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.app-title {
+  text-align: center;
+  flex-grow: 1;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hamburger-container {
+  z-index: 3;
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 40px;
+  height: 26px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  padding: 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.hamburger-button, .hamburger-button::before, .hamburger-button::after {
+  content: '';
+  background-color: #FFFFFF;
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: 0.2s ease-in-out;
+  border-radius: 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hamburger-button::before {
+  transform: translate(-15px, -10px);
+}
+
+.hamburger-button::after {
+  transform: translate(-15px, 10px);
+}
+
+.open .hamburger-button {
+  background: transparent;
+}
+
+.open .hamburger-button::before {
+  transform: rotate(-45deg) translate(-10px, -10px);
+}
+
+.open .hamburger-button::after {
+  transform: rotate(45deg) translate(-10px, 10px);
 }
