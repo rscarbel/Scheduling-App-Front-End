@@ -1,18 +1,20 @@
 import NavLink from "./NavLink";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import ScheduleDay from "../../pages/ScheduleDay";
+import Employees from "../../pages/Employees";
+import Account from "../../pages/Account";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Nav = () => {
   return <nav>
     <Router>
-      <NavLink displayText='Example1' linkLocation='/' />
-      <NavLink displayText='Example2' linkLocation='/' />
-      <NavLink displayText='Example3' linkLocation='/' />
-      <NavLink displayText='Example4' linkLocation='/' />
+      <NavLink displayText='Example1' linkLocation='/schedule-day' />
+      <NavLink displayText='Example2' linkLocation='/employees' />
+      <NavLink displayText='Example3' linkLocation='/account' />
+      <Switch>
+        <Route path='/schedule-day' exact component={ScheduleDay}/>
+        <Route path='/employees' exact component={Employees}/>
+        <Route path='/account' exact component={Account}/>
+      </Switch>
     </Router>
   </nav>
 };
