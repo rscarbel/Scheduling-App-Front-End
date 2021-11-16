@@ -1,5 +1,45 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bottom-nav {
+  order: 99999;
+  background-color: #33CC33;
+  background-image: linear-gradient(#33CC33,#008000);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.nav-link {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  color: #FFFFFF;
+  padding: 10px 0;
+  width: 25vw;
+  flex-grow: 1;
+}
+
+.nav-link > img {
+  height: 20px;
+}
+
+.nav-link:active {
+  background-color: #5beb5b;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-around;
 }
 
 .App-logo {
