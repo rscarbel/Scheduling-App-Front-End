@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
  * @param  {String} linkLocation The react-router-dom {Link} location
  * @return {JSX}     JSX for the link
  */
-const NavLink = ({displayText, linkLocation, iconImage}) => {
+const BottomNavLink = ({displayText, linkLocation, iconImage}) => {
   return <>
   <Link to={linkLocation}>
-    <div className='nav-link'>
+    <div className='bottom-nav-link'>
       <img alt={displayText} src={iconImage} />
       {displayText}
     </div>
@@ -17,4 +17,4 @@ const NavLink = ({displayText, linkLocation, iconImage}) => {
   </>
 }
 
-export default NavLink;
+export default BottomNavLink;
